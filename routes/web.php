@@ -36,3 +36,8 @@ Route::post('/book', function(Request $request) {
       ->withErrors($validator);
   }
 });
+
+Route::delete('/book/{book}',function(Book $book) {
+    $book->delete();
+    return redirect('/');
+});
