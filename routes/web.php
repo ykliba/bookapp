@@ -32,7 +32,7 @@ Route::post('/book', function(Request $request) {
 
   if ($validator->fails()) {
     return redirect('/')
-      ->withInput()
+      ->withInput($request->all)
       ->withErrors($validator);
   }
 });
